@@ -28,11 +28,13 @@ programa {
 				caso 1:
 					escreva("Digite o número da vaga onde o veículo deve ser adicionado: ")
 					leia(vaga)
+					vaga--
 					adicionarVeiculo(vaga)
 					pare
 				caso 2:
 					escreva("Digite o número da vaga onde o veículo a ser removido está: ")
 					leia(vaga)
+					vaga--
 					removerVeiculo(vaga)
 					pare
 				caso 3:
@@ -90,14 +92,23 @@ programa {
 
 
 	funcao listarVagas() {
-		escreva("===============================================================", "\n")
-		escreva("                   Estacionamento TECH Vagas                   ", "\n")
-		escreva("===============================================================", "\n")
+		escreva("=============================================================================================", "\n")
+		escreva("                                    Estacionamento SERRATEC                                  ", "\n")
+		escreva("=============================================================================================", "\n")
 		
 		para(inteiro i=0; i < 30; i++){
-			escreva("|", vagas[i])
+			escreva(" |", vagas[i])
 		}
-		escreva("|\n")
+		escreva(" |\n")
+
+		escreva("  ")
+		para(inteiro i=1; i<=30; i++) {
+			se(i<=9) {
+				escreva("0")
+			}
+			escreva(i, " ")
+		}
+		escreva("\n")
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -105,7 +116,7 @@ programa {
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1589; 
+ * @POSICAO-CURSOR = 763; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
